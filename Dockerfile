@@ -39,6 +39,8 @@ WORKDIR /simple-server-RoshniSingh101
 # copy the virtual environment from builder
 COPY --from=builder /simple-server-RoshniSingh101/.venv /simple-server-RoshniSingh101/.venv
 
+COPY tests/ ./tests/
+
 EXPOSE 8000
 
 CMD ["uvicorn", "cc_simple_server.server:app", "--host", "0.0.0.0", "--port", "8000"]
